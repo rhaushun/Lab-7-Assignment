@@ -3,18 +3,11 @@
  
 void labSort(int x, int array[])
 {
-  int a, b, tmp; 
-  int swap[x]; 
-
-  for (int i = 0; i < x; i++)
+  int a, b, swap, tmp; 
+  
+  for (a = 0; a < x - 1; a++)
   {
-    swap[i] = 0; 
-  }
-
-  int sort = 0; 
-  for (a = 0; a < x; a++)
-  {
-    sort = 1; 
+    swap = 0; 
     for (b = 0; b < x - a - 1; b++)
     {
       if (array[b] > array[b + 1])
@@ -22,19 +15,15 @@ void labSort(int x, int array[])
         tmp = array[b]; 
         array[b] = array[b + 1]; 
         array[b + 1] = tmp; 
-        swap[b]++; 
-        sort = 0; 
+        swap++; 
       }
       
     }
-    
+    printf("Index:%d\tSwaps:%d\n", a, swap); 
   }
   
-  for (int i = 0; i < x; i++)
-  {
-    printf("Index:%d\tSwaps:%d\n", i, swap[i]); 
-  }
-   
+  
+
 }
 
 int main()
